@@ -23,9 +23,10 @@
     compatible = "zmk,keymap";
 
     #define DEFAULT 0
-    #define KEYPAD  1
-    #define FN      2
-    #define MOD     3
+    #define COLEMAK 1
+    #define KEYPAD  2
+    #define FN      3
+    #define MOD     4
 
     default_layer {
       bindings = <
@@ -34,6 +35,16 @@
         &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LGUI  &kp LALT &none &none &kp RCTRL &kp RGUI            &none   &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none             &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
         &mo FN    &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp SPACE                &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo FN
+      >;
+    };
+
+    colemak {
+      bindings = <
+        &trans    &trans    &trans   &trans   &trans     &trans &trans                                                                       &trans  &trans &trans &trans    &trans   &trans   &trans
+        &trans    &kp Q     &kp W    &kp F    &kp P      &kp B  &none                                                                        &none   &kp J  &kp L  &kp U     &kp Y    &kp SEMI &trans
+        &trans    &kp A     &kp R    &kp S    &kp T      &kp G  &none           &trans    &trans   &none &none &trans    &trans              &none   &kp M  &kp N  &kp E     &kp I    &kp O    &trans
+        &trans    &kp Z     &kp X    &kp C    &kp D      &kp V         &none    &none     &trans   &none &none &trans    &none     &none             &kp K  &kp H  &kp COMMA &kp DOT  &kp FSLH &trans
+        &trans    &trans    &trans   &trans   &trans                   &trans   &trans    &trans               &trans    &trans    &trans                   &trans &trans    &trans   &trans   &trans
       >;
     };
 
@@ -49,7 +60,7 @@
 
     fn {
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6  &trans                                                      &trans &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6  &tog COLEMAK                                                &trans &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
         &trans &trans &trans &trans &trans &trans  &none                                                       &none  &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &none        &trans &trans &none &none &trans &trans        &none  &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none         &trans &trans &trans &trans  &trans  &trans
